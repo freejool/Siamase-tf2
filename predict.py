@@ -10,20 +10,20 @@ for gpu in gpus:
     
 if __name__ == "__main__":
     model = Siamese()
-        
-    while True:
-        image_1 = input('Input image_1 filename:')
-        try:
-            image_1 = Image.open(image_1)
-        except:
-            print('Image_1 Open Error! Try again!')
-            continue
+    
+    # image_1 = 'datasets/images_background/Latin/character02/0684_19.png'
+    image_1='img/yao.png'
+    try:
+        image_1 = Image.open(image_1)
+    except:
+        print('Image_1 Open Error! Try again!')
 
-        image_2 = input('Input image_2 filename:')
-        try:
-            image_2 = Image.open(image_2)
-        except:
-            print('Image_2 Open Error! Try again!')
-            continue
-        probability = model.detect_image(image_1,image_2)
-        print(probability)
+
+    image_2 = 'img/qin.png'
+    try:
+        image_2 = Image.open(image_2)
+    except:
+        print('Image_2 Open Error! Try again!')
+
+    probability = model.detect_image(image_1,image_2)
+    print(probability)
