@@ -169,7 +169,8 @@ if __name__ == "__main__":
     #   训练集和验证集的比例。
     #----------------------------------------------------#
     train_ratio = 0.9
-    train_lines, train_labels, val_lines, val_labels = load_dataset(dataset_path, train_own_data, train_ratio)
+    num_categories = 3000
+    train_lines, train_labels, val_lines, val_labels = load_dataset(dataset_path, train_own_data, train_ratio, num_categories)
     num_train   = len(train_lines)
     num_val     = len(val_lines)
     
